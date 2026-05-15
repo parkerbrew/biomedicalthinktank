@@ -36,14 +36,13 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250,248,244,0.97);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 48px;
+  background: var(--teal-deep);
+  padding: 0 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 72px;
+  overflow: hidden;
 }
 
 .nav-brand {
@@ -55,24 +54,24 @@ nav {
 }
 
 .nav-logo {
-  height: 52px;
+  height: 60px;
   width: auto;
-  mix-blend-mode: multiply;
-  filter: saturate(1.1);
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.nav-brand-text { display: flex; flex-direction: column; gap: 1px; }
+.nav-brand-text { display: flex; flex-direction: column; gap: 2px; }
 
 .nav-title {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
-  color: var(--text-primary);
+  color: white;
   letter-spacing: -0.2px;
 }
 .nav-subtitle {
   font-size: 11px;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.55);
   font-weight: 300;
   letter-spacing: 0.3px;
 }
@@ -88,7 +87,7 @@ nav {
   text-decoration: none;
   font-size: 13px;
   font-weight: 400;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.75);
   padding: 8px 16px;
   border-radius: var(--radius-sm);
   transition: all 0.15s;
@@ -96,25 +95,26 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text-primary);
-  background: var(--cream-dark);
+  color: white;
+  background: rgba(255,255,255,0.12);
 }
 
 .nav-links a.nav-cta {
-  background: var(--teal-mid);
-  color: white;
+  background: white;
+  color: var(--teal-deep);
+  font-weight: 500;
   margin-left: 8px;
 }
 
 .nav-links a.nav-cta:hover {
-  background: var(--teal-deep);
-  color: white;
+  background: var(--teal-light);
+  color: var(--teal-deep);
 }
 
 /* HERO */
 .hero {
-  padding: 80px 40px 72px;
-  max-width: 860px;
+  padding: 80px 5% 72px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -190,8 +190,8 @@ nav {
 
 /* SECTIONS */
 .section {
-  padding: 64px 40px;
-  max-width: 860px;
+  padding: 64px 5%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -535,8 +535,8 @@ nav {
 
 /* FOOTER */
 footer {
-  border-top: 1px solid var(--border);
-  padding: 28px 40px;
+  background: var(--teal-deep);
+  padding: 28px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -551,7 +551,7 @@ footer {
 
 .footer-copy {
   font-size: 12px;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.5);
   font-weight: 300;
 }
 
@@ -563,12 +563,12 @@ footer {
 
 .footer-links a {
   font-size: 12px;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.5);
   text-decoration: none;
   font-weight: 300;
 }
 
-.footer-links a:hover { color: var(--teal-mid); }
+.footer-links a:hover { color: white; }
 
 /* UTIL */
 .sr-only {
@@ -582,15 +582,15 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 720px) {
-  nav { padding: 0 16px; height: 64px; }
+  nav { padding: 0 16px; height: 64px; overflow: hidden; }
   .nav-subtitle { display: none; }
   .nav-title { font-size: 14px; }
-  .nav-logo { height: 40px; }
+  .nav-logo { height: 48px; }
   .nav-links { gap: 2px; }
   .nav-links a { padding: 5px 8px; font-size: 12px; white-space: nowrap; }
-  .hero { padding: 48px 20px 40px; }
+  .hero { padding: 48px 5% 40px; }
   .hero h1 { font-size: 36px; }
-  .section { padding: 40px 20px; }
+  .section { padding: 40px 5%; }
   .pillars, .channels, .contact-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
   .team-card.featured { grid-template-columns: 1fr; }
